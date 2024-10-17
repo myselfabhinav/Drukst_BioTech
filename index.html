@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drukst Biotech Pvt. Ltd.</title>
-   
+
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -18,7 +18,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Roboto', sans-serif;
             color: #333;
@@ -26,7 +26,7 @@
             overflow-x: hidden;
             position: relative;
         }
-        
+
         header {
             display: flex;
             justify-content: space-between;
@@ -40,7 +40,7 @@
             z-index: 1000;
             transition: background-color 0.3s ease;
         }
-        
+
         header:hover {
             background-color: #00d28e;
         }
@@ -59,6 +59,8 @@
         nav ul {
             list-style: none;
             display: flex;
+            flex-wrap: wrap; /* Allow wrapping for mobile */
+            gap: 15px; /* Space between links */
         }
 
         nav ul li {
@@ -80,7 +82,7 @@
             background: linear-gradient(to right, rgba(47, 128, 237, 0.9), rgba(0, 210, 142, 0.9)), url('images/your-hero-image.jpg');
             background-size: cover;
             background-position: center;
-            height: 100vh;
+            min-height: 60vh; /* Change from 100vh to allow scrolling */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -95,8 +97,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 100%;
             flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            max-width: 1200px; /* Limit width */
+            margin: 0 auto; /* Centering */
+            padding: 20px; /* Add padding for smaller screens */
         }
 
         .hero-text {
@@ -284,10 +288,17 @@
 
             .hero-content {
                 flex-direction: column; /* Stack Lottie and text */
+                padding: 10px; /* Add padding */
             }
 
             .hero-text {
                 text-align: center; /* Center text */
+            }
+
+            .lottie-container {
+                width: 90%; /* Increase width for small screens */
+                height: auto; /* Maintain aspect ratio */
+                margin: 20px 0; /* Margin for spacing */
             }
         }
     </style>
