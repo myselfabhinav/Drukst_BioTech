@@ -31,7 +31,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
             background-color: #2C3E50;
             color: white;
             position: fixed;
@@ -98,9 +98,8 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(to right, rgba(47, 128, 237, 0.9), rgba(0, 210, 142, 0.9)), url('images/your-hero-image.jpg');
+            background: linear-gradient(to right, rgba(47, 128, 237, 0.9), rgba(0, 210, 142, 0.9)), url('images/your-hero-image.jpg') no-repeat center center;
             background-size: cover;
-            background-position: center;
             min-height: 60vh;
             display: flex;
             align-items: center;
@@ -108,7 +107,7 @@
             text-align: center;
             color: white;
             position: relative;
-            margin-top: 80px;
+            margin-top: 80px; /* Adjusted for fixed header */
             overflow: hidden;
         }
 
@@ -233,6 +232,7 @@
             text-align: center;
             max-width: 300px;
             margin: 20px;
+            flex: 1 1 250px; /* Ensures sections are responsive */
         }
 
         .content-section h2 {
@@ -270,6 +270,11 @@
         }
 
         @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
             .main-content {
                 flex-direction: column;
                 align-items: center;
@@ -281,7 +286,7 @@
             }
 
             .hero h2 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
 
             .hero p {
@@ -296,11 +301,6 @@
         }
 
         @media (max-width: 480px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
             nav {
                 display: none; /* Hide nav by default */
             }
@@ -347,7 +347,7 @@
                 <li><a href="main.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="news.html">News</a></li>
-                <li><a href="carrer.html">Careers</a></li>
+                <li><a href="career.html">Careers</a></li>
                 <li><a href="contactus.html">Contact Us</a></li>
             </ul>
         </nav>
