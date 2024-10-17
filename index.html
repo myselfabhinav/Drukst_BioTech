@@ -1,381 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drukst Biotech Pvt. Ltd.</title>
-   
-    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+  <style>
+    @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
 
-    <!-- Lottie Animation Script -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
+    :root {
+      --primary-color: #a855f7;
+      --primary-color-dark: #9333ea;
+      --secondary-color: #ca8a04;
+      --text-dark: #d1d5db;
+      --text-light: #9ca3af;
+      --background-dark: #1f2937;
+      --background-darker: #111827;
+      --max-width: 1200px;
+    }
 
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-    
-        body {
-            font-family: 'Roboto', sans-serif;
-            color: #333;
-            background-color: #f4f8fb;
-            overflow-x: hidden;
-            position: relative;
-        }
-    
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 2vmin; /* Updated for responsiveness */
-            background-color: #2C3E50;
-            color: white;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            transition: background-color 0.3s ease;
-        }
-    
-        header:hover {
-            background-color: #00d28e;
-        }
-    
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-    
-        .logo-img {
-            width: 5vmin; /* Updated to vmin for scaling */
-            height: 5vmin;
-            margin-right: 1vmin;
-        }
-    
-        nav ul {
-            list-style: none;
-            display: flex;
-        }
-    
-        nav ul li {
-            margin-left: 2vmin;
-        }
-    
-        nav ul li a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-    
-        nav ul li a:hover {
-            text-decoration: underline;
-        }
-    
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(to right, rgba(47, 128, 237, 0.9), rgba(0, 210, 142, 0.9)), url('images/your-hero-image.jpg');
-            background-size: cover;
-            background-position: center;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            position: relative;
-            margin-top: 8vmin; /* Replaces fixed 80px */
-            overflow: hidden;
-        }
-    
-        .hero-content {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-        }
-    
-        .hero-text {
-            z-index: 1;
-            opacity: 0;
-            transform: translateY(5vmin); /* Responsive transform */
-            animation: fadeInUp 1s forwards;
-            animation-delay: 0.5s;
-            margin: 2vmin; /* Responsive margin */
-        }
-    
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-    
-        .hero h2 {
-            font-size: 6vmin; /* Responsive font-size */
-            margin-bottom: 2vmin;
-        }
-    
-        .hero p {
-            font-size: 3vmin;
-            margin-bottom: 3vmin;
-        }
-    
-        .cta-btn {
-            background-color: #00d28e;
-            padding: 1.5vmin 3vmin; /* Responsive padding */
-            color: white;
-            text-decoration: none;
-            border-radius: 0.5vmin;
-            font-size: 2vmin;
-            transition: background-color 0.3s ease;
-        }
-    
-        .cta-btn:hover {
-            background-color: #02b87c;
-        }
-    
-        .lottie-container {
-            width: 50%; /* Adjusted for responsiveness */
-            max-width: 40vmin; /* Responsive max-width */
-            height: auto; /* Responsive height */
-            margin-right: 5vmin;
-        }
-    
-        /* Floating Animation */
-        .floating-bg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            top: 0;
-            left: 0;
-            z-index: 0;
-        }
-    
-        .circle {
-            position: absolute;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 8s ease-in-out infinite;
-        }
-    
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0);
-            }
-            50% {
-                transform: translateY(-5vmin) rotate(180deg); /* Responsive transform */
-            }
-            100% {
-                transform: translateY(0) rotate(360deg);
-            }
-        }
-    
-        .circle:nth-child(1) {
-            width: 20vmin; /* Responsive width */
-            height: 20vmin;
-            top: 20%;
-            left: 10%;
-            animation-duration: 10s;
-        }
-    
-        .circle:nth-child(2) {
-            width: 10vmin;
-            height: 10vmin;
-            top: 50%;
-            left: 80%;
-            animation-duration: 12s;
-        }
-    
-        .circle:nth-child(3) {
-            width: 15vmin;
-            height: 15vmin;
-            top: 80%;
-            left: 30%;
-            animation-duration: 14s;
-        }
-    
-        .main-content {
-            display: flex;
-            justify-content: space-around;
-            margin: 5vmin 0;
-            padding: 0 5vmin;
-            flex-wrap: wrap;
-        }
-    
-        .content-section {
-            text-align: center;
-            max-width: 30vmin; /* Responsive max-width */
-            margin: 2vmin;
-        }
-    
-        .content-section h2 {
-            margin-bottom: 2vmin;
-            color: #2C3E50;
-        }
-    
-        .content-section p {
-            margin-bottom: 2vmin;
-            color: #7f8c8d;
-        }
-    
-        .mission {
-            background-color: #e8f6f9;
-            padding: 5vmin 0;
-            text-align: center;
-        }
-    
-        .mission h2 {
-            color: #2C3E50;
-            margin-bottom: 2vmin;
-        }
-    
-        .mission p {
-            color: #7f8c8d;
-            max-width: 60vmin;
-            margin: 0 auto;
-        }
-    
-        footer {
-            background-color: #2C3E50;
-            color: white;
-            padding: 2vmin;
-            text-align: center;
-        }
-    
-        @media (max-width: 768px) {
-            .main-content {
-                flex-direction: column;
-                align-items: center;
-            }
-    
-            .content-section {
-                margin-bottom: 3vmin;
-                width: 90%; /* Full width for cards on smaller screens */
-            }
-    
-            .hero h2 {
-                font-size: 5vmin;
-            }
-    
-            .hero p {
-                font-size: 2vmin;
-            }
-    
-            .lottie-container {
-                width: 40vmin; /* Responsive width */
-                height: auto; /* Maintain aspect ratio */
-                margin: 4vmin 0;
-            }
-        }
-    
-        @media (max-width: 480px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-    
-            nav ul {
-                justify-content: flex-start;
-            }
-    
-            .hero-content {
-                flex-direction: column;
-            }
-    
-            .hero-text {
-                text-align: center;
-            }
-    
-            .hero h2 {
-                font-size: 4vmin;
-            }
-    
-            .hero p {
-                font-size: 1.5vmin;
-            }
-        }
-    </style>
-    
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: var(--background-dark);
+      color: var(--text-dark);
+    }
+
+    .nav__content {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 1.5rem 1rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .logo img {
+      width: 50px;
+      height: auto;
+      margin-right: 10px;
+    }
+
+    nav .logo a {
+      font-size: 1.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      transition: 0.3s;
+    }
+
+    nav .logo a:hover {
+      color: var(--primary-color-dark);
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      list-style: none;
+    }
+
+    ul li a {
+      padding: 0.5rem 1rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      transition: 0.3s;
+    }
+
+    ul li a:hover {
+      border-bottom-color: var(--secondary-color);
+      color: var(--secondary-color);
+    }
+
+    .menu-toggle {
+      display: none;
+      cursor: pointer;
+      font-size: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .nav-links {
+      display: flex;
+    }
+
+    .section {
+      display: none;
+      background-color: var(--background-darker);
+      padding-top: 5rem;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .section.active {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .section__container {
+      max-width: var(--max-width);
+      margin: auto;
+      padding: 1rem;
+      display: flex;
+      gap: 4rem;
+      flex-direction: row;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .image {
+      flex: 1;
+      display: grid;
+      place-items: center;
+    }
+
+    .image canvas {
+      width: min(25rem, 90%);
+      border-radius: 100%;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .title {
+      font-size: 2.5rem;
+      font-weight: 400;
+      line-height: 3rem;
+      color: var(--text-dark);
+      margin-bottom: 1rem;
+    }
+
+    .title span {
+      font-weight: 600;
+    }
+
+    .description {
+      line-height: 1.5rem;
+      color: var(--text-light);
+      margin-bottom: 2rem;
+    }
+
+    @media (max-width: 750px) {
+      .section__container {
+        padding: 10rem 1rem 5rem 1rem;
+        text-align: center;
+        flex-direction: column;
+      }
+
+      .image {
+        margin-bottom: 2rem;
+      }
+
+      .nav__content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        display: none; /* Hide links initially */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: var(--background-darker);
+      }
+
+      .nav-links.active {
+        display: flex; /* Show links when active */
+      }
+
+      .menu-toggle {
+        display: block; /* Show hamburger menu */
+      }
+
+      ul {
+        flex-direction: column;
+        width: 100%;
+        gap: 0; /* Remove gap for stacked items */
+      }
+
+      ul li {
+        width: 100%; /* Full width for links */
+      }
+
+      ul li a {
+        padding: 1rem; /* Adjust padding */
+        width: 100%; /* Full width for links */
+        text-align: center; /* Center text */
+      }
+    }
+  </style>
+
+  <title>Drukst Biotech Pvt. Ltd</title>
 </head>
+
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="logo">
-            <a href="index.html">
-                <img src="images/logo.png" alt="Drukst Biotech Pvt. Ltd. Logo" class="logo-img">
-            </a>
-            <div class="logo-text">
-                <h1>Drukst Biotech Pvt. Ltd</h1>
-            </div>
-        </div>
-        <nav>
-            <ul>
-                <li><a href="main.html">Home</a></li>
-                <li><a href="products.html">Products</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="carrer.html">Careers</a></li>
-                <li><a href="contactus.html">Contact Us</a></li>
-            </ul>
-        </nav>
-    </header>
+  <nav>
+    <div class="nav__content">
+      <div class="logo">
+        <a href="main.html">
+          <img src="images/logo.png" alt="Drukst Biotech Logo" class="logo-img">
+          Drukst Biotech Pvt. Ltd
+        </a>
+      </div>
+      <span class="menu-toggle" id="menu-toggle">☰</span>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="main.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="news.html">News</a></li>
+        <li><a href="career.html">Careers</a></li>
+        <li><a href="contactus.html">Contact Us</a></li>
+      </ul>
+    </div>
+  </nav>
 
-    <!-- Hero Section with Large Image and Lottie Animation -->
-    <section class="hero">
-        <div class="floating-bg">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-        </div>
-        <div class="hero-content">
-            <div class="hero-text">
-                <h2>Welcome to Drukst Biotech Pvt. Ltd.</h2>
-                <p>Your partner in sustainable biotechnology solutions</p>
-                <a href="products.html" class="cta-btn">Discover Our Products</a>
-            </div>
-           
-                <div class="lottie-container" id="lottie-animation">
-                    <canvas id="canvas" width="300" height="300"></canvas>
-                </div>
-            
-        </div>
-    </section>
+  <section id="home" class="section active">
+    <div class="section__container">
+      <div class="content">
+        <h1 class="title">
+          Welcome to <span>Drukst Biotech Pvt. Ltd.</span>
+        </h1>
+        <p class="description">
+          Your partner in sustainable biotechnology solutions.
+        </p>
+        <a href="products.html" class="button">Discover Our Products</a>
+      </div>
+      <div class="lottie-container" id="lottie-animation">
+        <canvas id="canvas" width="300" height="300"></canvas>
+      </div>
+    </div>
+  </section>
 
-    <!-- Main Content Section -->
-    <section class="main-content">
-        <div class="content-section">
-            <h2>Our Mission</h2>
-            <p>To revolutionize the biotechnology industry through sustainable innovations.</p>
-        </div>
-        <div class="content-section">
-            <h2>Our Vision</h2>
-            <p>Creating a greener future with advanced bio-solutions for industries and consumers.</p>
-        </div>
-        <div class="content-section">
-            <h2>Our Impact</h2>
-            <p>Improving lives by offering environmentally friendly solutions to global challenges.</p>
-        </div>
-    </section>
+  <script type="module">
+    import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web/+esm";
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Drukst Biotech Pvt. Ltd. All rights reserved.</p>
-    </footer>
+    new DotLottie({
+      autoplay: true,
+      loop: true,
+      canvas: document.getElementById("canvas"),
+      src: "https://lottie.host/d62ec433-60a6-4d5c-89e2-148192395c6c/DNXQJnGwXQ.json",
+    });
 
-    <!-- Lottie Animation Script -->
-    <script type="module">
-        import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web/+esm";
+    // Toggle the menu on mobile devices
+    const menuToggle = document.getElementById('menu-toggle');
+    const navLinks = document.getElementById('nav-links');
 
-        new DotLottie({
-            autoplay: true,
-            loop: true,
-            canvas: document.getElementById("canvas"),
-            src: "https://lottie.host/d62ec433-60a6-4d5c-89e2-148192395c6c/DNXQJnGwXQ.json",
-        });
-    </script>
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+  </script>
 </body>
+
 </html>
