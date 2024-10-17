@@ -18,7 +18,7 @@
             padding: 0;
             box-sizing: border-box;
         }
-        
+    
         body {
             font-family: 'Roboto', sans-serif;
             color: #333;
@@ -26,12 +26,12 @@
             overflow-x: hidden;
             position: relative;
         }
-        
+    
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px;
+            padding: 2vmin; /* Updated for responsiveness */
             background-color: #2C3E50;
             color: white;
             position: fixed;
@@ -40,41 +40,41 @@
             z-index: 1000;
             transition: background-color 0.3s ease;
         }
-        
+    
         header:hover {
             background-color: #00d28e;
         }
-
+    
         .logo {
             display: flex;
             align-items: center;
         }
-
+    
         .logo-img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
+            width: 5vmin; /* Updated to vmin for scaling */
+            height: 5vmin;
+            margin-right: 1vmin;
         }
-
+    
         nav ul {
             list-style: none;
             display: flex;
         }
-
+    
         nav ul li {
-            margin-left: 20px;
+            margin-left: 2vmin;
         }
-
+    
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: 500;
         }
-
+    
         nav ul li a:hover {
             text-decoration: underline;
         }
-
+    
         /* Hero Section */
         .hero {
             background: linear-gradient(to right, rgba(47, 128, 237, 0.9), rgba(0, 210, 142, 0.9)), url('images/your-hero-image.jpg');
@@ -87,10 +87,10 @@
             text-align: center;
             color: white;
             position: relative;
-            margin-top: 80px;
+            margin-top: 8vmin; /* Replaces fixed 80px */
             overflow: hidden;
         }
-
+    
         .hero-content {
             display: flex;
             align-items: center;
@@ -98,54 +98,54 @@
             width: 100%;
             flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
-
+    
         .hero-text {
             z-index: 1;
             opacity: 0;
-            transform: translateY(50px);
+            transform: translateY(5vmin); /* Responsive transform */
             animation: fadeInUp 1s forwards;
             animation-delay: 0.5s;
-            margin: 20px; /* Margin for spacing on smaller screens */
+            margin: 2vmin; /* Responsive margin */
         }
-
+    
         @keyframes fadeInUp {
             to {
                 opacity: 1;
                 transform: translateY(0);
             }
         }
-
+    
         .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 6vmin; /* Responsive font-size */
+            margin-bottom: 2vmin;
         }
-
+    
         .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
+            font-size: 3vmin;
+            margin-bottom: 3vmin;
         }
-
+    
         .cta-btn {
             background-color: #00d28e;
-            padding: 15px 30px;
+            padding: 1.5vmin 3vmin; /* Responsive padding */
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
+            border-radius: 0.5vmin;
+            font-size: 2vmin;
             transition: background-color 0.3s ease;
         }
-
+    
         .cta-btn:hover {
             background-color: #02b87c;
         }
-
+    
         .lottie-container {
             width: 50%; /* Adjusted for responsiveness */
-            max-width: 400px;
+            max-width: 40vmin; /* Responsive max-width */
             height: auto; /* Responsive height */
-            margin-right: 50px;
+            margin-right: 5vmin;
         }
-
+    
         /* Floating Animation */
         .floating-bg {
             position: absolute;
@@ -155,143 +155,152 @@
             left: 0;
             z-index: 0;
         }
-
+    
         .circle {
             position: absolute;
             background: rgba(255, 255, 255, 0.1);
             border-radius: 50%;
             animation: float 8s ease-in-out infinite;
         }
-
+    
         @keyframes float {
             0% {
                 transform: translateY(0) rotate(0);
             }
             50% {
-                transform: translateY(-50px) rotate(180deg);
+                transform: translateY(-5vmin) rotate(180deg); /* Responsive transform */
             }
             100% {
                 transform: translateY(0) rotate(360deg);
             }
         }
-
+    
         .circle:nth-child(1) {
-            width: 200px;
-            height: 200px;
+            width: 20vmin; /* Responsive width */
+            height: 20vmin;
             top: 20%;
             left: 10%;
             animation-duration: 10s;
         }
-
+    
         .circle:nth-child(2) {
-            width: 100px;
-            height: 100px;
+            width: 10vmin;
+            height: 10vmin;
             top: 50%;
             left: 80%;
             animation-duration: 12s;
         }
-
+    
         .circle:nth-child(3) {
-            width: 150px;
-            height: 150px;
+            width: 15vmin;
+            height: 15vmin;
             top: 80%;
             left: 30%;
             animation-duration: 14s;
         }
-
+    
         .main-content {
             display: flex;
             justify-content: space-around;
-            margin: 50px 0;
-            padding: 0 50px;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            margin: 5vmin 0;
+            padding: 0 5vmin;
+            flex-wrap: wrap;
         }
-
+    
         .content-section {
             text-align: center;
-            max-width: 300px;
-            margin: 20px; /* Add margin for spacing */
+            max-width: 30vmin; /* Responsive max-width */
+            margin: 2vmin;
         }
-
+    
         .content-section h2 {
-            margin-bottom: 20px;
+            margin-bottom: 2vmin;
             color: #2C3E50;
         }
-
+    
         .content-section p {
-            margin-bottom: 20px;
+            margin-bottom: 2vmin;
             color: #7f8c8d;
         }
-
+    
         .mission {
             background-color: #e8f6f9;
-            padding: 50px 0;
+            padding: 5vmin 0;
             text-align: center;
         }
-
+    
         .mission h2 {
             color: #2C3E50;
-            margin-bottom: 20px;
+            margin-bottom: 2vmin;
         }
-
+    
         .mission p {
             color: #7f8c8d;
-            max-width: 600px;
+            max-width: 60vmin;
             margin: 0 auto;
         }
-
+    
         footer {
             background-color: #2C3E50;
             color: white;
-            padding: 20px;
+            padding: 2vmin;
             text-align: center;
         }
-
+    
         @media (max-width: 768px) {
             .main-content {
                 flex-direction: column;
                 align-items: center;
             }
-
+    
             .content-section {
-                margin-bottom: 30px;
-                width: 100%; /* Full width for cards on smaller screens */
+                margin-bottom: 3vmin;
+                width: 90%; /* Full width for cards on smaller screens */
             }
-
+    
             .hero h2 {
-                font-size: 2rem;
+                font-size: 5vmin;
             }
-
+    
             .hero p {
-                font-size: 1.2rem;
+                font-size: 2vmin;
             }
-
+    
             .lottie-container {
-                width: 80%; /* Responsive width */
+                width: 40vmin; /* Responsive width */
                 height: auto; /* Maintain aspect ratio */
-                margin: 20px 0; /* Margin for spacing */
+                margin: 4vmin 0;
             }
         }
-
+    
         @media (max-width: 480px) {
             header {
-                flex-direction: column; /* Stack header items vertically on small screens */
-                align-items: flex-start; /* Align left */
+                flex-direction: column;
+                align-items: flex-start;
             }
-
+    
             nav ul {
-                justify-content: flex-start; /* Align nav to the left */
+                justify-content: flex-start;
             }
-
+    
             .hero-content {
-                flex-direction: column; /* Stack Lottie and text */
+                flex-direction: column;
             }
-
+    
             .hero-text {
-                text-align: center; /* Center text */
+                text-align: center;
+            }
+    
+            .hero h2 {
+                font-size: 4vmin;
+            }
+    
+            .hero p {
+                font-size: 1.5vmin;
             }
         }
     </style>
+    
 </head>
 <body>
     <!-- Header Section -->
