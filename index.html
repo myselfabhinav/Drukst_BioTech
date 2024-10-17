@@ -30,7 +30,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2.5vmin; /* Responsive padding */
+            padding: 1.25rem; /* 20px */
             background-color: #2C3E50;
             color: white;
             position: fixed;
@@ -50,9 +50,9 @@
         }
 
         .logo-img {
-            width: 5vmin; /* Responsive width */
-            height: 5vmin; /* Responsive height */
-            margin-right: 1.25vmin; /* Responsive margin */
+            width: 3rem; /* 48px */
+            height: 3rem; /* 48px */
+            margin-right: 0.625rem; /* 10px */
         }
 
         nav {
@@ -65,11 +65,11 @@
             list-style: none;
             display: flex;
             flex-wrap: wrap;
-            gap: 1.5vmin; /* Responsive gap */
+            gap: 0.9375rem; /* 15px */
         }
 
         nav ul li {
-            margin-left: 2vmin; /* Responsive margin */
+            margin-left: 1rem; /* 16px */
         }
 
         nav ul li a {
@@ -89,10 +89,10 @@
         }
 
         .menu-toggle div {
-            width: 2vmin; /* Responsive width */
-            height: 0.25vmin; /* Responsive height */
+            width: 1.25rem; /* 20px */
+            height: 0.1875rem; /* 3px */
             background: white;
-            margin: 0.5vmin; /* Responsive margin */
+            margin: 0.25rem; /* 4px */
         }
 
         .hero {
@@ -108,7 +108,7 @@
             position: relative;
             margin-top: 5rem; /* 80px */
             overflow: hidden;
-            padding: 2.5vmin; /* Responsive padding */
+            padding: 1rem; /* Added padding for responsiveness */
         }
 
         .hero-content {
@@ -118,7 +118,7 @@
             flex-wrap: wrap;
             max-width: 75rem; /* 1200px */
             margin: 0 auto;
-            padding: 2.5vmin; /* Responsive padding */
+            padding: 1.25rem; /* 20px */
         }
 
         .hero-text {
@@ -127,7 +127,7 @@
             transform: translateY(1.5625rem); /* 25px */
             animation: fadeInUp 1s forwards;
             animation-delay: 0.5s;
-            margin: 2.5vmin; /* Responsive margin */
+            margin: 1.25rem; /* 20px */
         }
 
         @keyframes fadeInUp {
@@ -138,22 +138,22 @@
         }
 
         .hero h2 {
-            font-size: 5vmin; /* Responsive font size */
-            margin-bottom: 1.5vmin; /* Responsive margin */
+            font-size: 2.5rem; /* 40px */
+            margin-bottom: 1rem; /* 16px */
         }
 
         .hero p {
-            font-size: 3vmin; /* Responsive font size */
-            margin-bottom: 3vmin; /* Responsive margin */
+            font-size: 1.25rem; /* 20px */
+            margin-bottom: 1.875rem; /* 30px */
         }
 
         .cta-btn {
             background-color: #00d28e;
-            padding: 1.5vmin 3vmin; /* Responsive padding */
+            padding: 0.625rem 1.25rem; /* 10px 20px */
             color: white;
             text-decoration: none;
-            border-radius: 0.625rem; /* 10px */
-            font-size: 2vmin; /* Responsive font size */
+            border-radius: 0.3125rem; /* 5px */
+            font-size: 1rem; /* 16px */
             transition: background-color 0.3s ease;
         }
 
@@ -162,9 +162,9 @@
         }
 
         .lottie-container {
-            width: 50vmin; /* Responsive width */
-            height: 50vmin; /* Responsive height */
-            margin-right: 5vmin; /* Responsive margin */
+            width: 25vmin; /* Responsive width */
+            height: 25vmin; /* Responsive height */
+            margin-right: 3.125rem; /* 50px */
         }
 
         .floating-bg {
@@ -222,22 +222,22 @@
         .main-content {
             display: flex;
             justify-content: space-around;
-            margin: 5vmin 0; /* Responsive margin */
-            padding: 0 5vmin; /* Responsive padding */
+            margin: 3.125rem 0; /* 50px */
+            padding: 0 3.125rem; /* 50px */
             flex-wrap: wrap;
         }
 
         .content-section {
             text-align: center;
             max-width: 18.75rem; /* 300px */
-            margin: 2.5vmin; /* Responsive margin */
+            margin: 1.25rem; /* 20px */
             flex: 1 1 30%; /* Flex-grow, Flex-shrink, Flex-basis */
         }
 
         .content-section h2 {
             margin-bottom: 1.25rem; /* 20px */
             color: #2C3E50;
-            font-size: 3vmin; /* Responsive font size */
+            font-size: 1.5rem; /* Adjust font size */
         }
 
         .content-section p {
@@ -247,7 +247,7 @@
 
         .mission {
             background-color: #e8f6f9;
-            padding: 5vmin 0; /* Responsive padding */
+            padding: 3.125rem 0; /* 50px */
             text-align: center;
         }
 
@@ -265,7 +265,7 @@
         footer {
             background-color: #2C3E50;
             color: white;
-            padding: 2.5vmin; /* Responsive padding */
+            padding: 1.25rem; /* 20px */
             text-align: center;
         }
 
@@ -276,22 +276,23 @@
             }
 
             .content-section {
-                margin-bottom: 3vmin; /* Responsive margin */
+                margin-bottom: 1.875rem; /* 30px */
                 width: 90%; /* Full width */
             }
 
             .hero h2 {
-                font-size: 4vmin; /* Responsive font size */
+                font-size: 2rem; /* 32px */
             }
 
             .hero p {
-                font-size: 2.5vmin; /* Responsive font size */
+                font-size: 1rem; /* 16px */
             }
 
             .lottie-container {
                 width: 80vmin; /* Responsive width */
                 height: auto; /* Maintain aspect ratio */
-                margin: 2.5vmin 0; /* Responsive margin */
+                margin: auto; /* 20px */
+                margin-right: auto;
             }
         }
 
@@ -303,29 +304,19 @@
 
             nav ul {
                 flex-direction: column;
-                display: none; /* Hide menu initially */
-                width: 100%;
-            }
-
-            nav ul.show {
-                display: flex; /* Show menu on toggle */
             }
 
             nav ul li {
                 margin-left: 0; /* Reset margin */
-                margin-bottom: 1.25vmin; /* Responsive margin */
-            }
-
-            .menu-toggle {
-                display: flex; /* Show toggle button */
+                margin-bottom: 0.625rem; /* 10px */
             }
 
             .hero h2 {
-                font-size: 3vmin; /* Responsive font size */
+                font-size: 1.5rem; /* 24px */
             }
 
             .hero p {
-                font-size: 1.5vmin; /* Responsive font size */
+                font-size: 0.875rem; /* 14px */
             }
         }
     </style>
@@ -337,7 +328,7 @@
             <h1>Drukst Biotech Pvt. Ltd.</h1>
         </div>
         <nav>
-            <ul id="nav-links">
+            <ul>
                 <li><a href="main.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="news.html">News</a></li>
@@ -345,7 +336,7 @@
                 <li><a href="contactus.html">Contact Us</a></li>
             </ul>
         </nav>
-        <div class="menu-toggle" id="menu-toggle">
+        <div class="menu-toggle">
             <div></div>
             <div></div>
             <div></div>
@@ -360,7 +351,7 @@
         </div>
         <div class="hero-content">
             <div class="lottie-container" id="lottie-animation">
-                <canvas id="canvas" width="300" height="300"></canvas>
+                <canvas id="canvas" width="250" height="250"></canvas>
             </div>
             <div class="hero-text">
                 <h2>Innovating for Better Health</h2>
@@ -402,13 +393,6 @@
             loop: true,
             canvas: document.getElementById("canvas"),
             src: "https://lottie.host/d62ec433-60a6-4d5c-89e2-148192395c6c/DNXQJnGwXQ.json",
-        });
-        // Mobile menu toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const navLinks = document.getElementById('nav-links');
-
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('show');
         });
     </script>
 </body>
