@@ -6,10 +6,8 @@
     <title>Drukst Biotech Pvt. Ltd.</title>
 
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    <!-- Lottie Animation Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
 
     <style>
@@ -25,13 +23,14 @@
             background-color: #f4f8fb;
             overflow-x: hidden;
             position: relative;
+            font-size: 16px; /* Base font size */
         }
 
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px;
+            padding: 1.25rem; /* 20px */
             background-color: #2C3E50;
             color: white;
             position: fixed;
@@ -51,9 +50,9 @@
         }
 
         .logo-img {
-            width: 50px;
-            height: 50px;
-            margin-right: 10px;
+            width: 3.125rem; /* 50px */
+            height: 3.125rem; /* 50px */
+            margin-right: 0.625rem; /* 10px */
         }
 
         nav {
@@ -66,11 +65,11 @@
             list-style: none;
             display: flex;
             flex-wrap: wrap;
-            gap: 15px;
+            gap: 0.9375rem; /* 15px */
         }
 
         nav ul li {
-            margin-left: 20px;
+            margin-left: 1.25rem; /* 20px */
         }
 
         nav ul li a {
@@ -90,16 +89,16 @@
         }
 
         .menu-toggle div {
-            width: 25px;
-            height: 3px;
+            width: 1.5625rem; /* 25px */
+            height: 0.1875rem; /* 3px */
             background: white;
-            margin: 4px;
+            margin: 0.25rem; /* 4px */
         }
 
-        /* Hero Section */
         .hero {
-            background: linear-gradient(to right, rgba(47, 128, 237, 0.9), rgba(0, 210, 142, 0.9)), url('images/your-hero-image.jpg') no-repeat center center;
+            background: linear-gradient(to right, rgba(47, 128, 237, 0.9), rgba(0, 210, 142, 0.9)), url('images/your-hero-image.jpg');
             background-size: cover;
+            background-position: center;
             min-height: 60vh;
             display: flex;
             align-items: center;
@@ -107,7 +106,7 @@
             text-align: center;
             color: white;
             position: relative;
-            margin-top: 80px; /* Adjusted for fixed header */
+            margin-top: 5rem; /* 80px */
             overflow: hidden;
         }
 
@@ -116,18 +115,18 @@
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
-            max-width: 1200px;
+            max-width: 75rem; /* 1200px */
             margin: 0 auto;
-            padding: 20px;
+            padding: 1.25rem; /* 20px */
         }
 
         .hero-text {
             z-index: 1;
             opacity: 0;
-            transform: translateY(50px);
+            transform: translateY(1.5625rem); /* 25px */
             animation: fadeInUp 1s forwards;
             animation-delay: 0.5s;
-            margin: 20px;
+            margin: 1.25rem; /* 20px */
         }
 
         @keyframes fadeInUp {
@@ -138,22 +137,22 @@
         }
 
         .hero h2 {
-            font-size: 3rem;
-            margin-bottom: 20px;
+            font-size: 2.25rem; /* 36px */
+            margin-bottom: 1.25rem; /* 20px */
         }
 
         .hero p {
-            font-size: 1.5rem;
-            margin-bottom: 30px;
+            font-size: 1.125rem; /* 18px */
+            margin-bottom: 1.875rem; /* 30px */
         }
 
         .cta-btn {
             background-color: #00d28e;
-            padding: 15px 30px;
+            padding: 0.9375rem 1.875rem; /* 15px 30px */
             color: white;
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2rem;
+            border-radius: 0.3125rem; /* 5px */
+            font-size: 1rem; /* 16px */
             transition: background-color 0.3s ease;
         }
 
@@ -162,12 +161,11 @@
         }
 
         .lottie-container {
-            width: 400px;
-            height: 400px;
-            margin-right: 50px;
+            width: 25rem; /* 400px */
+            height: 25rem; /* 400px */
+            margin-right: 3.125rem; /* 50px */
         }
 
-        /* Floating Animation */
         .floating-bg {
             position: absolute;
             width: 100%;
@@ -189,7 +187,7 @@
                 transform: translateY(0) rotate(0);
             }
             50% {
-                transform: translateY(-50px) rotate(180deg);
+                transform: translateY(-3.125rem) rotate(180deg); /* -50px */
             }
             100% {
                 transform: translateY(0) rotate(360deg);
@@ -197,24 +195,24 @@
         }
 
         .circle:nth-child(1) {
-            width: 200px;
-            height: 200px;
+            width: 12.5rem; /* 200px */
+            height: 12.5rem; /* 200px */
             top: 20%;
             left: 10%;
             animation-duration: 10s;
         }
 
         .circle:nth-child(2) {
-            width: 100px;
-            height: 100px;
+            width: 6.25rem; /* 100px */
+            height: 6.25rem; /* 100px */
             top: 50%;
             left: 80%;
             animation-duration: 12s;
         }
 
         .circle:nth-child(3) {
-            width: 150px;
-            height: 150px;
+            width: 9.375rem; /* 150px */
+            height: 9.375rem; /* 150px */
             top: 80%;
             left: 30%;
             animation-duration: 14s;
@@ -223,95 +221,95 @@
         .main-content {
             display: flex;
             justify-content: space-around;
-            margin: 50px 0;
-            padding: 0 50px;
+            margin: 3.125rem 0; /* 50px */
+            padding: 0 3.125rem; /* 50px */
             flex-wrap: wrap;
         }
 
         .content-section {
             text-align: center;
-            max-width: 300px;
-            margin: 20px;
-            flex: 1 1 250px; /* Ensures sections are responsive */
+            max-width: 18.75rem; /* 300px */
+            margin: 1.25rem; /* 20px */
+            flex: 1 1 30%; /* Flex-grow, Flex-shrink, Flex-basis */
         }
 
         .content-section h2 {
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem; /* 20px */
             color: #2C3E50;
         }
 
         .content-section p {
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem; /* 20px */
             color: #7f8c8d;
         }
 
         .mission {
             background-color: #e8f6f9;
-            padding: 50px 0;
+            padding: 3.125rem 0; /* 50px */
             text-align: center;
         }
 
         .mission h2 {
             color: #2C3E50;
-            margin-bottom: 20px;
+            margin-bottom: 1.25rem; /* 20px */
         }
 
         .mission p {
             color: #7f8c8d;
-            max-width: 600px;
+            max-width: 37.5rem; /* 600px */
             margin: 0 auto;
         }
 
         footer {
             background-color: #2C3E50;
             color: white;
-            padding: 20px;
+            padding: 1.25rem; /* 20px */
             text-align: center;
         }
 
         @media (max-width: 768px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
             .main-content {
                 flex-direction: column;
                 align-items: center;
             }
 
             .content-section {
-                margin-bottom: 30px;
-                width: 100%;
+                margin-bottom: 1.875rem; /* 30px */
+                width: 90%; /* Full width */
             }
 
             .hero h2 {
-                font-size: 2.5rem;
+                font-size: 2rem; /* 32px */
             }
 
             .hero p {
-                font-size: 1.2rem;
+                font-size: 1rem; /* 16px */
             }
 
             .lottie-container {
-                width: 80%;
+                width: 90%;
                 height: auto;
-                margin: 20px 0;
+                margin: 1.25rem 0; /* 20px */
             }
         }
 
         @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
             nav {
-                display: none; /* Hide nav by default */
+                display: none;
             }
 
             .menu-toggle {
-                display: flex; /* Show menu toggle */
+                display: flex;
             }
 
             .hero-content {
                 flex-direction: column;
-                padding: 10px;
+                padding: 0.625rem; /* 10px */
             }
 
             .hero-text {
@@ -321,13 +319,20 @@
             .lottie-container {
                 width: 90%;
                 height: auto;
-                margin: 20px 0;
+                margin: 1.25rem 0; /* 20px */
+            }
+
+            .hero h2 {
+                font-size: 1.5rem; /* 24px */
+            }
+
+            .hero p {
+                font-size: 0.875rem; /* 14px */
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header Section -->
     <header>
         <div class="logo">
             <a href="index.html">
@@ -347,13 +352,12 @@
                 <li><a href="main.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="news.html">News</a></li>
-                <li><a href="career.html">Careers</a></li>
+                <li><a href="carrer.html">Careers</a></li>
                 <li><a href="contactus.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section with Large Image and Lottie Animation -->
     <section class="hero">
         <div class="floating-bg">
             <div class="circle"></div>
@@ -371,7 +375,6 @@
         </div>
     </section>
 
-    <!-- Main Content Section -->
     <section class="main-content">
         <div class="content-section">
             <h2>Cutting-Edge Research</h2>
@@ -389,7 +392,6 @@
         </div>
     </section>
 
-    <!-- Mission Statement Section -->
     <section class="mission">
         <div class="container">
             <h2>Our Mission</h2>
@@ -397,14 +399,12 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
     <footer>
         <div class="footer-content">
             <p>&copy; 2010 Drukst Biotech Pvt. Ltd. All rights reserved.</p>
         </div>
     </footer>
 
-    <!-- Lottie Animation Script -->
     <script type="module">
         import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web/+esm";
 
@@ -412,10 +412,9 @@
             autoplay: true,
             loop: true,
             canvas: document.getElementById("canvas"),
-            src: "https://lottie.host/d62ec433-60a6-4d5c-89e2-148192395c6c/DNXQJnGwXQ.json", // Replace with your .lottie or .json file URL
+            src: "https://lottie.host/d62ec433-60a6-4d5c-89e2-148192395c6c/DNXQJnGwXQ.json",
         });
 
-        // Toggle menu visibility for mobile
         const menuToggle = document.getElementById('menu-toggle');
         const navbar = document.getElementById('navbar');
 
