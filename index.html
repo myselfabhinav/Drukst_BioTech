@@ -96,6 +96,7 @@
             align-items: center;
             justify-content: center;
             width: 100%;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
         .hero-text {
@@ -104,6 +105,7 @@
             transform: translateY(50px);
             animation: fadeInUp 1s forwards;
             animation-delay: 0.5s;
+            margin: 20px; /* Margin for spacing on smaller screens */
         }
 
         @keyframes fadeInUp {
@@ -201,11 +203,13 @@
             justify-content: space-around;
             margin: 50px 0;
             padding: 0 50px;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
         .content-section {
             text-align: center;
             max-width: 300px;
+            margin: 20px; /* Add margin for spacing */
         }
 
         .content-section h2 {
@@ -250,6 +254,7 @@
 
             .content-section {
                 margin-bottom: 30px;
+                width: 100%; /* Full width for cards on smaller screens */
             }
 
             .hero h2 {
@@ -258,6 +263,31 @@
 
             .hero p {
                 font-size: 1.2rem;
+            }
+
+            .lottie-container {
+                width: 80%; /* Responsive width */
+                height: auto; /* Maintain aspect ratio */
+                margin: 20px 0; /* Margin for spacing */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column; /* Stack header items vertically on small screens */
+                align-items: flex-start; /* Align left */
+            }
+
+            nav ul {
+                justify-content: flex-start; /* Align nav to the left */
+            }
+
+            .hero-content {
+                flex-direction: column; /* Stack Lottie and text */
+            }
+
+            .hero-text {
+                text-align: center; /* Center text */
             }
         }
     </style>
@@ -280,7 +310,6 @@
                 <li><a href="news.html">News</a></li>
                 <li><a href="carrer.html">Careers</a></li>
                 <li><a href="contactus.html">Contact Us</a></li>
-              
             </ul>
         </nav>
     </header>
