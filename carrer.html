@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Careers - Drukst Biotech Pvt. Ltd.</title>
+    <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
     <style>
         * {
             margin: 0;
@@ -169,6 +172,36 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        @media (max-width: 768px) {
+            .careers h2 {
+                font-size: 2rem; /* Adjusted for smaller screens */
+            }
+
+            .job-item {
+                width: 90%; /* Full width on smaller screens */
+                margin: 10px; /* Reduced margin for better spacing */
+            }
+
+            .careers p {
+                font-size: 1rem; /* Smaller font size for descriptions */
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column; /* Stack header items vertically on small screens */
+                align-items: flex-start; /* Align left */
+            }
+
+            nav ul {
+                justify-content: flex-start; /* Align nav to the left */
+            }
+
+            nav ul li {
+                margin-left: 10px; /* Adjusted margin for smaller screens */
+            }
+        }
     </style>
 </head>
 <body>
@@ -200,7 +233,7 @@
             <div class="job-list">
                 <div class="job-item">
                     <h3>Medical Representative</h3>
-                    <p>We are seeking a skilled  Medical Representative with a strong background in healthcare sales and passion.</p>
+                    <p>We are seeking a skilled Medical Representative with a strong background in healthcare sales and passion.</p>
                     <button class="apply-button">Apply Now</button>
                 </div>
                 <div class="job-item">
