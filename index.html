@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Drukst Biotech Pvt. Ltd.</title>
-
+   
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
+    <!-- Lottie Animation Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
 
     <style>
@@ -16,21 +18,20 @@
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'Roboto', sans-serif;
             color: #333;
             background-color: #f4f8fb;
             overflow-x: hidden;
             position: relative;
-            font-size: 1rem; /* Base font size */
         }
-
+        
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.25rem; /* 20px */
+            padding: 20px;
             background-color: #2C3E50;
             color: white;
             position: fixed;
@@ -39,7 +40,7 @@
             z-index: 1000;
             transition: background-color 0.3s ease;
         }
-
+        
         header:hover {
             background-color: #00d28e;
         }
@@ -50,26 +51,18 @@
         }
 
         .logo-img {
-            width: 3rem; /* 48px */
-            height: 3rem; /* 48px */
-            margin-right: 0.625rem; /* 10px */
-        }
-
-        nav {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.9375rem; /* 15px */
         }
 
         nav ul li {
-            margin-left: 1rem; /* 16px */
+            margin-left: 20px;
         }
 
         nav ul li a {
@@ -82,52 +75,37 @@
             text-decoration: underline;
         }
 
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .menu-toggle div {
-            width: 1.25rem; /* 20px */
-            height: 0.1875rem; /* 3px */
-            background: white;
-            margin: 0.25rem; /* 4px */
-        }
-
+        /* Hero Section */
         .hero {
             background: linear-gradient(to right, rgba(47, 128, 237, 0.9), rgba(0, 210, 142, 0.9)), url('images/your-hero-image.jpg');
             background-size: cover;
             background-position: center;
-            min-height: 60vh;
+            height: 100vh;
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             color: white;
             position: relative;
-            margin-top: 5rem; /* 80px */
+            margin-top: 80px;
             overflow: hidden;
-            padding: 1rem; /* Added padding for responsiveness */
         }
 
         .hero-content {
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
-            max-width: 75rem; /* 1200px */
-            margin: 0 auto;
-            padding: 1.25rem; /* 20px */
+            width: 100%;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
         .hero-text {
             z-index: 1;
             opacity: 0;
-            transform: translateY(1.5625rem); /* 25px */
+            transform: translateY(50px);
             animation: fadeInUp 1s forwards;
             animation-delay: 0.5s;
-            margin: 1.25rem; /* 20px */
+            margin: 20px; /* Margin for spacing on smaller screens */
         }
 
         @keyframes fadeInUp {
@@ -138,22 +116,22 @@
         }
 
         .hero h2 {
-            font-size: 2.5rem; /* 40px */
-            margin-bottom: 1rem; /* 16px */
+            font-size: 3rem;
+            margin-bottom: 20px;
         }
 
         .hero p {
-            font-size: 1.25rem; /* 20px */
-            margin-bottom: 1.875rem; /* 30px */
+            font-size: 1.5rem;
+            margin-bottom: 30px;
         }
 
         .cta-btn {
             background-color: #00d28e;
-            padding: 0.625rem 1.25rem; /* 10px 20px */
+            padding: 15px 30px;
             color: white;
             text-decoration: none;
-            border-radius: 0.3125rem; /* 5px */
-            font-size: 1rem; /* 16px */
+            border-radius: 5px;
+            font-size: 1.2rem;
             transition: background-color 0.3s ease;
         }
 
@@ -162,11 +140,13 @@
         }
 
         .lottie-container {
-            width: 25vmin; /* Responsive width */
-            height: 25vmin; /* Responsive height */
-            margin-right: 3.125rem; /* 50px */
+            width: 50%; /* Adjusted for responsiveness */
+            max-width: 400px;
+            height: auto; /* Responsive height */
+            margin-right: 50px;
         }
 
+        /* Floating Animation */
         .floating-bg {
             position: absolute;
             width: 100%;
@@ -188,7 +168,7 @@
                 transform: translateY(0) rotate(0);
             }
             50% {
-                transform: translateY(-3.125rem) rotate(180deg); /* -50px */
+                transform: translateY(-50px) rotate(180deg);
             }
             100% {
                 transform: translateY(0) rotate(360deg);
@@ -196,24 +176,24 @@
         }
 
         .circle:nth-child(1) {
-            width: 12.5vmin; /* Responsive size */
-            height: 12.5vmin; /* Responsive size */
+            width: 200px;
+            height: 200px;
             top: 20%;
             left: 10%;
             animation-duration: 10s;
         }
 
         .circle:nth-child(2) {
-            width: 6.25vmin; /* Responsive size */
-            height: 6.25vmin; /* Responsive size */
+            width: 100px;
+            height: 100px;
             top: 50%;
             left: 80%;
             animation-duration: 12s;
         }
 
         .circle:nth-child(3) {
-            width: 9.375vmin; /* Responsive size */
-            height: 9.375vmin; /* Responsive size */
+            width: 150px;
+            height: 150px;
             top: 80%;
             left: 30%;
             animation-duration: 14s;
@@ -222,50 +202,48 @@
         .main-content {
             display: flex;
             justify-content: space-around;
-            margin: 3.125rem 0; /* 50px */
-            padding: 0 3.125rem; /* 50px */
-            flex-wrap: wrap;
+            margin: 50px 0;
+            padding: 0 50px;
+            flex-wrap: wrap; /* Allow wrapping on smaller screens */
         }
 
         .content-section {
             text-align: center;
-            max-width: 18.75rem; /* 300px */
-            margin: 1.25rem; /* 20px */
-            flex: 1 1 30%; /* Flex-grow, Flex-shrink, Flex-basis */
+            max-width: 300px;
+            margin: 20px; /* Add margin for spacing */
         }
 
         .content-section h2 {
-            margin-bottom: 1.25rem; /* 20px */
+            margin-bottom: 20px;
             color: #2C3E50;
-            font-size: 1.5rem; /* Adjust font size */
         }
 
         .content-section p {
-            margin-bottom: 1.25rem; /* 20px */
+            margin-bottom: 20px;
             color: #7f8c8d;
         }
 
         .mission {
             background-color: #e8f6f9;
-            padding: 3.125rem 0; /* 50px */
+            padding: 50px 0;
             text-align: center;
         }
 
         .mission h2 {
             color: #2C3E50;
-            margin-bottom: 1.25rem; /* 20px */
+            margin-bottom: 20px;
         }
 
         .mission p {
             color: #7f8c8d;
-            max-width: 37.5rem; /* 600px */
+            max-width: 600px;
             margin: 0 auto;
         }
 
         footer {
             background-color: #2C3E50;
             color: white;
-            padding: 1.25rem; /* 20px */
+            padding: 20px;
             text-align: center;
         }
 
@@ -276,56 +254,55 @@
             }
 
             .content-section {
-                margin-bottom: 1.875rem; /* 30px */
-                width: 90%; /* Full width */
+                margin-bottom: 30px;
+                width: 100%; /* Full width for cards on smaller screens */
             }
 
             .hero h2 {
-                font-size: 2rem; /* 32px */
+                font-size: 2rem;
             }
 
             .hero p {
-                font-size: 1rem; /* 16px */
+                font-size: 1.2rem;
             }
 
             .lottie-container {
-                width: 80vmin; /* Responsive width */
+                width: 80%; /* Responsive width */
                 height: auto; /* Maintain aspect ratio */
-                margin: auto; /* 20px */
-                margin-right: auto;
+                margin: 20px 0; /* Margin for spacing */
             }
         }
 
         @media (max-width: 480px) {
             header {
-                flex-direction: column;
-                align-items: flex-start;
+                flex-direction: column; /* Stack header items vertically on small screens */
+                align-items: flex-start; /* Align left */
             }
 
             nav ul {
-                flex-direction: column;
+                justify-content: flex-start; /* Align nav to the left */
             }
 
-            nav ul li {
-                margin-left: 0; /* Reset margin */
-                margin-bottom: 0.625rem; /* 10px */
+            .hero-content {
+                flex-direction: column; /* Stack Lottie and text */
             }
 
-            .hero h2 {
-                font-size: 1.5rem; /* 24px */
-            }
-
-            .hero p {
-                font-size: 0.875rem; /* 14px */
+            .hero-text {
+                text-align: center; /* Center text */
             }
         }
     </style>
 </head>
 <body>
+    <!-- Header Section -->
     <header>
         <div class="logo">
-            <img src="images/logo.png" alt="Company Logo" class="logo-img">
-            <h1>Drukst Biotech Pvt. Ltd.</h1>
+            <a href="index.html">
+                <img src="images/logo.png" alt="Drukst Biotech Pvt. Ltd. Logo" class="logo-img">
+            </a>
+            <div class="logo-text">
+                <h1>Drukst Biotech Pvt. Ltd</h1>
+            </div>
         </div>
         <nav>
             <ul>
@@ -336,13 +313,9 @@
                 <li><a href="contactus.html">Contact Us</a></li>
             </ul>
         </nav>
-        <div class="menu-toggle">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
     </header>
 
+    <!-- Hero Section with Large Image and Lottie Animation -->
     <section class="hero">
         <div class="floating-bg">
             <div class="circle"></div>
@@ -350,41 +323,41 @@
             <div class="circle"></div>
         </div>
         <div class="hero-content">
-            <div class="lottie-container" id="lottie-animation">
-                <canvas id="canvas" width="250" height="250"></canvas>
-            </div>
             <div class="hero-text">
-                <h2>Innovating for Better Health</h2>
-                <p>Your trusted partner in pharmaceuticals and biotech innovation.</p>
-                <a href="#" class="cta-btn">Learn More</a>
+                <h2>Welcome to Drukst Biotech Pvt. Ltd.</h2>
+                <p>Your partner in sustainable biotechnology solutions</p>
+                <a href="products.html" class="cta-btn">Discover Our Products</a>
             </div>
+           
+                <div class="lottie-container" id="lottie-animation">
+                    <canvas id="canvas" width="300" height="300"></canvas>
+                </div>
+            
         </div>
     </section>
 
-    <div class="main-content">
+    <!-- Main Content Section -->
+    <section class="main-content">
         <div class="content-section">
-            <h2>Cutting-Edge Research</h2>
-            <p>We invest in the latest research to deliver top-quality pharmaceuticals and innovative biotech solutions.</p>
+            <h2>Our Mission</h2>
+            <p>To revolutionize the biotechnology industry through sustainable innovations.</p>
         </div>
         <div class="content-section">
-            <h2>Our Global Impact</h2>
-            <p>We are committed to improving healthcare on a global scale with a focus on accessibility and innovation.</p>
+            <h2>Our Vision</h2>
+            <p>Creating a greener future with advanced bio-solutions for industries and consumers.</p>
         </div>
         <div class="content-section">
-            <h2>Join Our Team</h2>
-            <p>Explore exciting career opportunities and be part of our mission to advance healthcare through innovation.</p>
+            <h2>Our Impact</h2>
+            <p>Improving lives by offering environmentally friendly solutions to global challenges.</p>
         </div>
-    </div>
+    </section>
 
-    <div class="mission">
-        <h2>Our Mission</h2>
-        <p>To advance healthcare through innovation and accessibility, ensuring a better tomorrow for everyone.</p>
-    </div>
-
+    <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 Drukst Biotech Pvt. Ltd. All rights reserved.</p>
     </footer>
 
+    <!-- Lottie Animation Script -->
     <script type="module">
         import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web/+esm";
 
