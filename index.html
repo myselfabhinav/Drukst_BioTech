@@ -56,11 +56,17 @@
             margin-right: 10px;
         }
 
+        nav {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
         nav ul {
             list-style: none;
             display: flex;
-            flex-wrap: wrap; /* Allow wrapping for mobile */
-            gap: 15px; /* Space between links */
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         nav ul li {
@@ -77,12 +83,25 @@
             text-decoration: underline;
         }
 
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background: white;
+            margin: 4px;
+        }
+
         /* Hero Section */
         .hero {
             background: linear-gradient(to right, rgba(47, 128, 237, 0.9), rgba(0, 210, 142, 0.9)), url('images/your-hero-image.jpg');
             background-size: cover;
             background-position: center;
-            min-height: 60vh; /* Change from 100vh to allow scrolling */
+            min-height: 60vh;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -97,10 +116,10 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
-            max-width: 1200px; /* Limit width */
-            margin: 0 auto; /* Centering */
-            padding: 20px; /* Add padding for smaller screens */
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
         }
 
         .hero-text {
@@ -109,7 +128,7 @@
             transform: translateY(50px);
             animation: fadeInUp 1s forwards;
             animation-delay: 0.5s;
-            margin: 20px; /* Margin for spacing on smaller screens */
+            margin: 20px;
         }
 
         @keyframes fadeInUp {
@@ -207,13 +226,13 @@
             justify-content: space-around;
             margin: 50px 0;
             padding: 0 50px;
-            flex-wrap: wrap; /* Allow wrapping on smaller screens */
+            flex-wrap: wrap;
         }
 
         .content-section {
             text-align: center;
             max-width: 300px;
-            margin: 20px; /* Add margin for spacing */
+            margin: 20px;
         }
 
         .content-section h2 {
@@ -258,7 +277,7 @@
 
             .content-section {
                 margin-bottom: 30px;
-                width: 100%; /* Full width for cards on smaller screens */
+                width: 100%;
             }
 
             .hero h2 {
@@ -270,35 +289,39 @@
             }
 
             .lottie-container {
-                width: 80%; /* Responsive width */
-                height: auto; /* Maintain aspect ratio */
-                margin: 20px 0; /* Margin for spacing */
+                width: 80%;
+                height: auto;
+                margin: 20px 0;
             }
         }
 
         @media (max-width: 480px) {
             header {
-                flex-direction: column; /* Stack header items vertically on small screens */
-                align-items: flex-start; /* Align left */
+                flex-direction: column;
+                align-items: flex-start;
             }
 
-            nav ul {
-                justify-content: flex-start; /* Align nav to the left */
+            nav {
+                display: none; /* Hide nav by default */
+            }
+
+            .menu-toggle {
+                display: flex; /* Show menu toggle */
             }
 
             .hero-content {
-                flex-direction: column; /* Stack Lottie and text */
-                padding: 10px; /* Add padding */
+                flex-direction: column;
+                padding: 10px;
             }
 
             .hero-text {
-                text-align: center; /* Center text */
+                text-align: center;
             }
 
             .lottie-container {
-                width: 90%; /* Increase width for small screens */
-                height: auto; /* Maintain aspect ratio */
-                margin: 20px 0; /* Margin for spacing */
+                width: 90%;
+                height: auto;
+                margin: 20px 0;
             }
         }
     </style>
@@ -314,7 +337,12 @@
                 <h1>Drukst Biotech Pvt. Ltd</h1>
             </div>
         </div>
-        <nav>
+        <div class="menu-toggle" id="menu-toggle">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="navbar">
             <ul>
                 <li><a href="main.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
@@ -385,6 +413,14 @@
             loop: true,
             canvas: document.getElementById("canvas"),
             src: "https://lottie.host/d62ec433-60a6-4d5c-89e2-148192395c6c/DNXQJnGwXQ.json", // Replace with your .lottie or .json file URL
+        });
+
+        // Toggle menu visibility for mobile
+        const menuToggle = document.getElementById('menu-toggle');
+        const navbar = document.getElementById('navbar');
+
+        menuToggle.addEventListener('click', () => {
+            navbar.style.display = navbar.style.display === 'flex' ? 'none' : 'flex';
         });
     </script>
 </body>
