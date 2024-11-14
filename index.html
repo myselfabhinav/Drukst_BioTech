@@ -7,20 +7,49 @@
     <title>Contact Us - Drukst Biotech Pvt. Ltd.</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
     <style>
-      
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; color: #333; background-color: #f4f8fb; }
+        body { font-family: 'Roboto', sans-serif; color: #333; }
 
+        /* Video Background */
+        .hero {
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;  /* Keeps the video behind the content */
+        }
+
+        /* Hero Section Text */
+        .hero-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: white;
+            z-index: 1;
+        }
+
+        .hero h2 { font-size: 2.5em; margin-bottom: 0.5em; }
+        .hero p { font-size: 1.2em; margin-bottom: 1em; }
+        .cta-btn { background-color: #00d28e; padding: 0.8em 1.5em; color: white; border-radius: 0.5em; text-decoration: none; }
+
+        /* Header and Menu Styles */
         header {
             display: flex; justify-content: space-between; align-items: center;
             padding: 1em 5%; background-color: #2C3E50; color: white;
             position: fixed; width: 100%; top: 0; z-index: 1000;
         }
-        header .logo { display: flex; align-items: center; }
-        header .logo h1 { font-size: 1.5em; }
 
-        
         nav ul {
             list-style: none;
             display: flex;
@@ -43,45 +72,12 @@
         nav ul li a:hover {
             color: #3498db;
         }
-    
-
-       
-          
-        
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(to right, rgba(47, 128, 237, 0.9), rgba(0, 210, 142, 0.9)), url('images/your-hero-image.jpg');
-            background-size: cover; height: 100vh; display: flex;
-            align-items: center; justify-content: center; text-align: center;
-            color: white; margin-top: 60px; padding: 2em;
-        }
-        .hero h2 { font-size: 2.5em; margin-bottom: 0.5em; }
-        .hero p { font-size: 1.2em; margin-bottom: 1em; }
-        .cta-btn { background-color: #00d28e; padding: 0.8em 1.5em; color: white; border-radius: 0.5em; text-decoration: none; }
-        .lottie-container { max-width: 300px; width: 80%; margin-top: 2em; }
 
         /* Main Content */
         .main-content { display: flex; justify-content: space-around; flex-wrap: wrap; padding: 2em; }
         .content-section { text-align: center; max-width: 30vmin; margin: 2vmin; }
         .content-section h2 { margin-bottom: 1em; color: #2C3E50; }
         .content-section p { color: #7f8c8d; }
-
-        /* Footer */
-        footer { background-color: #2C3E50; color: white; padding: 1em; text-align: center; }
-
-        /* Responsive Adjustments */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; color: #333; background-color: #f4f8fb; }
-
-        header {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 1em 5%; background-color: #2C3E50; color: white;
-            position: fixed; width: 100%; top: 0; z-index: 1000;
-        }
-        header .logo { display: flex; align-items: center; }
-        header .logo h1 { font-size: 1.5em; }
-
 
         /* Footer */
         footer { background-color: #2C3E50; color: white; padding: 1em; text-align: center; }
@@ -128,6 +124,12 @@
     </header>
 
     <section class="hero">
+        <!-- Background Video -->
+        <video autoplay muted loop>
+            <source src="abhi.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
         <div class="hero-content">
             <h2>Welcome to Drukst Biotech Pvt. Ltd.</h2>
             <p>Your partner in sustainable biotechnology solutions</p>
@@ -153,21 +155,5 @@
     <footer>
         <p>&copy; 2024 Drukst Biotech Pvt. Ltd. All rights reserved.</p>
     </footer>
-
-    <footer>
-        <p>&copy; 2024 Drukst Biotech Pvt. Ltd. | All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        const animationContainer = document.getElementById("lottie-animation");
-        const animationData = {
-            container: animationContainer,
-            renderer: 'svg',
-            loop: true,
-            autoplay: true,
-            path: 'https://assets2.lottiefiles.com/packages/lf20_nkglj7r2.json'
-        };
-        lottie.loadAnimation(animationData);
-    </script>
 </body>
 </html>
