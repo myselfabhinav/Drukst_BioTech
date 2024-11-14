@@ -216,6 +216,7 @@
             animation-delay: 1s;
         }
 
+        /* Mobile Responsiveness */
         @media (max-width: 768px) {
             .news h2 {
                 font-size: 2rem;
@@ -232,16 +233,58 @@
             .news-item {
                 padding: 15px; /* Reduce padding on smaller screens */
             }
-        }
 
-        @media (max-width: 480px) {
+            .logo-img {
+                width: 40px;
+                height: 40px;
+            }
+
             header {
                 flex-direction: column; /* Stack header items vertically on small screens */
                 align-items: flex-start; /* Align left */
             }
 
             nav ul {
+                flex-direction: column;
                 justify-content: flex-start; /* Align nav to the left */
+                margin-top: 10px;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+                width: 100%;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+
+            .logo-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .news-item {
+                padding: 10px;
+                margin: 10px 0;
+            }
+
+            .register-button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
             }
         }
     </style>
@@ -280,47 +323,24 @@
     </section>
 
     <section class="news">
-        <div class="container">
-            <h2>Latest News & Press Releases</h2>
-            <div class="news-item">
-                <h3>Breakthrough in Cancer Treatment</h3>
-                <p>We are excited to announce a breakthrough in cancer treatment that has shown promising results in clinical trials. Our innovative approach could change the landscape of oncology.</p>
-            </div>
-            <div class="news-item">
-                <h3>Upcoming Product Launch</h3>
-                <p>Stay tuned for the launch of our latest product designed to improve health outcomes. The official release is scheduled for next month!</p>
-            </div>
-            <div class="news-item">
-                <h3>New Partnership with HealthTech Innovations</h3>
-                <p>We have partnered with HealthTech Innovations to enhance our research capabilities and accelerate the development of new treatments.</p>
-            </div>
-            <div class="news-item">
-                <h3>Upcoming Strategy Meeting</h3>
-                <p>Join us for our upcoming strategy meeting where we will discuss new initiatives and future directions for our company.</p>
-            </div>
-            <div class="news-item">
-                <h3>Quarterly Earnings Report</h3>
-                <p>Our quarterly earnings report will be released next week. We are eager to share our growth and achievements with you!</p>
-            </div>
-            <div class="news-item">
-                <h3>Annual Conference Registration Open</h3>
-                <p>Registration for our annual conference is now open! Join us to learn more about our innovative research and network with industry leaders.</p>
-                <button class="register-button">Register Now</button>
-            </div>
-            <div class="news-item">
-                <h3>New Research Publication</h3>
-                <p>We have published a new research paper detailing our latest findings in genetic engineering. Check it out on our website!</p>
-            </div>
+        <div class="news-header">
+            <h2>Latest News</h2>
+        </div>
+
+        <div class="news-item">
+            <h3>New Biotech Product Launched</h3>
+            <p>We are thrilled to announce the launch of our latest biotech product, which is expected to revolutionize the industry.</p>
+            <button class="register-button">Read More</button>
+        </div>
+        <div class="news-item">
+            <h3>Company Expansion Plans</h3>
+            <p>Drukst Biotech Pvt. Ltd. is expanding its operations to new international markets.</p>
+            <button class="register-button">Read More</button>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2010 Drukst Biotech Pvt. Ltd. All rights reserved.</p>
-        <p>Follow us on:
-            <a href="https://www.facebook.com" style="color: white; margin-left: 5px;">Facebook</a>,
-            <a href="https://www.twitter.com" style="color: white; margin-left: 5px;">Twitter</a>,
-            <a href="https://www.linkedin.com" style="color: white; margin-left: 5px;">LinkedIn</a>
-        </p>
+        <p>&copy; 2024 Drukst Biotech Pvt. Ltd. All rights reserved.</p>
     </footer>
 </body>
 </html>
