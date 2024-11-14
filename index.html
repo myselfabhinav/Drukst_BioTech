@@ -8,46 +8,26 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.6/lottie.min.js"></script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Roboto', sans-serif; color: #333; }
+        body { font-family: 'Roboto', sans-serif; color: #333; background-color: #f4f8fb; }
 
-        /* Video Background */
-        .hero {
-            position: relative;
-            width: 100%;
-            height: 100vh;
-            overflow: hidden;
-        }
-
-        .hero video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            z-index: -1;  /* Keeps the video behind the content */
-        }
-
-        /* Hero Section Text */
-        .hero-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            z-index: 1;
-        }
-
-        .hero h2 { font-size: 2.5em; margin-bottom: 0.5em; }
-        .hero p { font-size: 1.2em; margin-bottom: 1em; }
-        .cta-btn { background-color: #00d28e; padding: 0.8em 1.5em; color: white; border-radius: 0.5em; text-decoration: none; }
-
-        /* Header and Menu Styles */
+        /* Header Styling */
         header {
             display: flex; justify-content: space-between; align-items: center;
-            padding: 1em 5%; background-color: #2C3E50; color: white;
+            padding: 1em 5%; background-color: rgba(44, 62, 80, 0.9); color: white;
             position: fixed; width: 100%; top: 0; z-index: 1000;
+        }
+
+        header .logo {
+            display: flex; align-items: center;
+        }
+
+        header .logo h1 {
+            font-size: 1.5em;
+            margin-left: 10px;
+        }
+
+        header .logo img {
+            width: 40px;
         }
 
         nav ul {
@@ -72,6 +52,37 @@
         nav ul li a:hover {
             color: #3498db;
         }
+
+        /* Background Video */
+        .hero {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        .hero video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: -1;
+        }
+
+        .hero-content {
+            text-align: center;
+            z-index: 1;
+            padding: 2em;
+        }
+
+        .hero h2 { font-size: 2.5em; margin-bottom: 0.5em; }
+        .hero p { font-size: 1.2em; margin-bottom: 1em; }
+        .cta-btn { background-color: #00d28e; padding: 0.8em 1.5em; color: white; border-radius: 0.5em; text-decoration: none; }
 
         /* Main Content */
         .main-content { display: flex; justify-content: space-around; flex-wrap: wrap; padding: 2em; }
@@ -103,9 +114,9 @@
     <header>
         <div class="logo">
             <a href="index.html">
-                <img src="images/logo.png" alt="Logo" style="width: 40px; margin-right: 1em;">
+                <img src="images/logo.png" alt="Logo">
             </a>
-            <h1>Drukst Biotech Pvt. Ltd</h1>
+            <h1>Drukst Biotech Pvt. Ltd</h1> <!-- Company name is now adjacent -->
         </div>
         <div class="hamburger" onclick="toggleMenu()">
             <div></div>
@@ -124,12 +135,10 @@
     </header>
 
     <section class="hero">
-        <!-- Background Video -->
         <video autoplay muted loop>
             <source src="abhi.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
-
         <div class="hero-content">
             <h2>Welcome to Drukst Biotech Pvt. Ltd.</h2>
             <p>Your partner in sustainable biotechnology solutions</p>
@@ -155,5 +164,6 @@
     <footer>
         <p>&copy; 2024 Drukst Biotech Pvt. Ltd. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
