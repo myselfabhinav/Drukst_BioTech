@@ -85,7 +85,6 @@
             justify-content: center; /* Center horizontally */
         }
 
-        /* New styles for animation and heading layout */
         .animation-container {
             width: 15vw; /* Relative width */
             height: 15vw; /* Relative height */
@@ -191,14 +190,12 @@
             width: 100%;
         }
 
-        /* Icons */
         .icon {
             font-size: 24px;
             color: #3498db;
             margin-bottom: 10px;
         }
 
-        /* Animations */
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
@@ -222,6 +219,10 @@
 
             .contact-card {
                 width: 100%; /* Full width for cards on mobile */
+            }
+
+            .form-container {
+                width: 90%; /* Adjust form width for mobile */
             }
         }
 
@@ -258,7 +259,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="main.html">Home</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="products.html">Products</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="carrer.html">Careers</a></li>
@@ -288,12 +289,12 @@
             <div class="contact-card">
                 <div class="icon">🏢</div>
                 <h3>Address</h3>
-                <p>Drukst BioTech, Part1, Napier Colony Newaz Ganj, Chaupatiyan<br>Lucknow, Uttar Pradesh, 226003</p>
+                <p>Drukst BioTech, Part1, Napier Colony Newaz Ganj, Chaupatiyan<br>Uttarakhand-248007</p>
             </div>
         </div>
 
         <div class="form-container">
-            <form action="/submit" method="POST">
+            <form action="#" method="POST">
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
@@ -312,21 +313,16 @@
     </section>
 
     <footer>
-        <p>&copy; 2010 Drukst Biotech Pvt. Ltd. All rights reserved.</p>
-        <p>Follow us on:
-            <a href="https://www.facebook.com" style="color: white; margin-left: 5px;">Facebook</a>,
-            <a href="https://www.twitter.com" style="color: white; margin-left: 5px;">Twitter</a>,
-            <a href="https://www.linkedin.com" style="color: white; margin-left: 5px;">LinkedIn</a>
-        </p>
+        <p>© 2024 Drukst Biotech Pvt. Ltd. All rights reserved.</p>
     </footer>
-    <script type="module">
-        import { DotLottie } from "https://cdn.jsdelivr.net/npm/@lottiefiles/dotlottie-web/+esm";
 
-        new DotLottie({
-            autoplay: true,
+    <script>
+        var animation = bodymovin.loadAnimation({
+            container: document.getElementById('canvas'),
+            path: 'https://assets7.lottiefiles.com/packages/lf20_71vpa4i9.json',
+            renderer: 'canvas',
             loop: true,
-            canvas: document.getElementById("canvas"),
-            src: "https://lottie.host/0922a6a9-83df-440a-bbb6-7820b97ba147/MCj34xetAo.json", // Replace with your .lottie or .json file URL
+            autoplay: true,
         });
     </script>
 </body>
