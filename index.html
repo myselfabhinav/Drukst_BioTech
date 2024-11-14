@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -7,7 +7,7 @@
 
     <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    
+
 <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { font-family: 'Roboto', sans-serif; color: #333; background-color: #f4f8fb; }
@@ -23,8 +23,16 @@
     header nav ul li a { color: white; text-decoration: none; font-weight: 500; }
 
     /* Mobile Navigation */
+    .menu-toggle {
+        display: none;
+        font-size: 1.5em;
+        cursor: pointer;
+    }
     @media (max-width: 768px) {
-        header nav ul { display: none; } /* Hide menu on smaller screens */
+        header nav ul { display: none; flex-direction: column; background-color: #2C3E50; padding: 1em; position: absolute; top: 100%; right: 5%; width: 50%; border-radius: 8px; }
+        header nav ul li { margin: 1em 0; }
+        .menu-toggle { display: block; }
+        .menu-open nav ul { display: flex; }
     }
 
     /* Hero Section */
@@ -37,7 +45,6 @@
     .hero h2 { font-size: 2.5em; margin-bottom: 0.5em; }
     .hero p { font-size: 1.2em; margin-bottom: 1em; }
     .cta-btn { background-color: #00d28e; padding: 0.8em 1.5em; color: white; border-radius: 0.5em; text-decoration: none; }
-    .lottie-container { max-width: 300px; width: 80%; margin-top: 2em; }
 
     /* Main Content */
     .main-content { display: flex; justify-content: space-around; flex-wrap: wrap; padding: 2em; }
@@ -55,7 +62,6 @@
         .hero p { font-size: 1em; }
         .cta-btn { padding: 0.5em 1em; }
         .content-section { width: 90%; margin-bottom: 1em; }
-     
     }
 
     @media (max-width: 480px) {
@@ -74,6 +80,7 @@
             </a>
             <h1>Drukst Biotech Pvt. Ltd</h1>
         </div>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
@@ -90,7 +97,6 @@
             <h2>Welcome to Drukst Biotech Pvt. Ltd.</h2>
             <p>Your partner in sustainable biotechnology solutions</p>
             <a href="products.html" class="cta-btn">Discover Our Products</a>
-          
         </div>
     </section>
 
@@ -113,6 +119,10 @@
         <p>&copy; 2024 Drukst Biotech Pvt. Ltd. All rights reserved.</p>
     </footer>
 
-
+    <script>
+        function toggleMenu() {
+            document.body.classList.toggle("menu-open");
+        }
+    </script>
 </body>
 </html>
